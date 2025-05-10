@@ -17,3 +17,5 @@ Route::get('/login', function () {
 
 
 Route::get('/mypage', [MypageController::class, 'index'])->middleware('auth')->name('mypage');
+
+Route::post('/favorites/{shop}', [MypageController::class, 'toggle'])->middleware('auth')->name('favorites.toggle');

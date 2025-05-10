@@ -62,7 +62,7 @@ button {
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s;
-    align: center;
+    box-align: center;
 }
 
 .form__button {
