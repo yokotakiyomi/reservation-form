@@ -16,7 +16,7 @@ class RegisterRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'string', 'max:255'],
-            'password' => ['required', 'string', 'min:8'],
+            'password' => ['required', 'string', 'min:6'],
         ];
     }
 
@@ -31,7 +31,7 @@ class RegisterRequest extends FormRequest
             'email.email' => '有効なメールアドレス形式を入力してください',
             'email.max' => 'メールアドレスを255文字以下で入力してください',
             'password.required' => 'パスワードを入力してください',
-            'password.min' => 'パスワードは８文字以上で入力してください',
+            'password.min' => 'パスワードは6文字以上で入力してください',
         ];
     }
 }

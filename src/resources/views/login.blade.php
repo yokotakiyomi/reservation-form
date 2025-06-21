@@ -10,7 +10,7 @@
         <div class="login-form__heading">
             <h4>Login</h4>
         </div>
-        <form action="/mypage" method="post">
+        <form action="{{ route('login.post') }}" method="post">
             @csrf
             <div class="form__group">
                 <label for="email">
@@ -26,7 +26,7 @@
             <div class="form__group">
                 <label for="password">
                     <img src="/img/pass.png" alt="Password" width="20" height="20">
-                    <input type="password" name="password" placeholder="Password" value="{{ old('password') }}" />
+                    <input type="password" name="password" placeholder="Password" />
                 </label>
                 <div class="form__error">
                     @error('password')
@@ -39,4 +39,4 @@
             </div>
         </form>
     </div>
-    @endsection
+@endsection

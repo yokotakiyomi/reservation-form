@@ -1,0 +1,85 @@
+.container {
+    padding-top: 40px;
+}
+
+.card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.card-text {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.card .d-flex {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn.btn-primary.btn-sm {
+    background-color: #2f62ff;
+    border: none;
+    font-weight: bold;
+    padding: 6px 14px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+}
+
+.favorite-btn {
+    border: none;
+    background: none;
+}
+
+.favorite-btn i {
+    transition: color 0.3s ease;
+}
+.fa-heart {
+    font-size: 1.5rem;
+    transition: color 0.2s;
+}
+
+.fa-heart.text-danger {
+    color: red;
+}
+
+.btn-link.p-0 {
+    border: none;
+    background: none;
+}
+
+@media (max-width: 768px) {
+    .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

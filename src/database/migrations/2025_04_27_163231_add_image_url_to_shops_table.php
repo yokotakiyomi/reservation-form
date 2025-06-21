@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class AddImageUrlToShopsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::table('shops', function (Blueprint $table) {

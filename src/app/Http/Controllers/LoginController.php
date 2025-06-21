@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Login;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function showloginform()
+    public function showLoginForm()
     {
         return view('login');
     }
@@ -21,7 +21,7 @@ class LoginController extends Controller
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
 
-            return redirect()->intended('/mypage');
+            return redirect()->intended('/my_page');
         }
 
             return back()->withErrors([
