@@ -29,7 +29,7 @@
                 <div class="shop-card">
                     <img src="{{ $shop->image_url }}" alt="{{ $shop->shop_name }}" width="200">
                     <h5>{{ $shop->shop_name }}</h5>
-                    <p>#{{ $shop->area->name }} #{{ $shop->genre->name }}</p>
+                    <p>#{{ $shop->area->area_name }} #{{ $shop->genre->genre_name }}</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <a href="{{ route('shops.detail', ['id' => $shop->id]) }}" class="btn btn-primary btn-sm">詳しくみる</a>
                         <form action="{{ route('favorites.toggle', ['shop' => $shop->id]) }}" method="POST">
