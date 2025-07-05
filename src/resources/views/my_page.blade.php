@@ -6,20 +6,37 @@
 
 @section('content')
 <div class="mypage">
+
     <div class="mypage__heading">
         <h2>{{ Auth::user()->name }}さん</h2>
     </div>
 
-    <div class="mypage__body">
+    <div class="mypage__body-row">
         <div class="reservation-status">
             <h4>予約状況</h4>
-            <div class="reservation-details">
-                <img src="/img/clock.png" alt="Clock" width="20">
-                <p>Shop: {{ $reservations[0]->shop->shop_name ?? '予約なし' }}</p>
-                <p>Date: {{ $reservations[0]->date ?? '-' }}</p>
-                <p>Time: {{ $reservations[0]->time ?? '-' }}</p>
-                <p>Number: {{ $reservations[0]->number ?? '-' }}人</p>
+            @forelse($reservations as $reservation)
+            <div class="reservation-card">
+                <div class="reservation-header">
+                    <img src="/img/clock.png" alt="Clock" width="20">
+                    <span class="reservation-title">予約{{ $loop->iteration }}</span>
+                    <form action="{{ route('reserve.cancel', $reservation->id) }}" method="POST" class="cancel-form">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="cancel-btn" onclick="return confirm('この予約をキャンセルしますか？')">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="reservation-details">
+                    <p>Shop: {{ $reservation->shop->shop_name }}</p>
+                    <p>Date: {{ $reservation->reservation_date }}</p>
+                    <p>Time: {{ $reservation->reservation_time }}</p>
+                    <p>Number: {{ $reservation->reservation_number }}人</p>
+                </div>
             </div>
+            @empty
+            <p>予約なし</p>
+            @endforelse
         </div>
 
         <div class="favorite-shop">
@@ -37,8 +54,10 @@
                             <button type="submit" class="favorite-button">♥</button>
                         </form>
                     </div>
-                    @endforeach
                 </div>
+                @endforeach
             </div>
         </div>
-        @endsection
+    </div>
+</div>
+@endsection

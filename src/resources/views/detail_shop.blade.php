@@ -20,8 +20,8 @@
             <h3>予約</h3>
             <input type="hidden" name="shop_id" value="{{ $shop->id }}">
 
-            <input type="date" name="date" required>
-            <select name="time" required>
+            <input type="date" name="reservation_date" required>
+            <select name="reservation_time" required>
                 <option value="17:00">17:00</option>
                 <option value="17:30">17:30</option>
                 <option value="18:00">18:00</option>
@@ -31,7 +31,7 @@
                 <option value="20:00">20:00</option>
                 <option value="20:30">20:30</option>
             </select>
-            <select name="number" required>
+            <select name="reservation_number" required>
                 @for ($i = 1; $i <= 10; $i++)
                     <option value="{{ $i }}">{{ $i }}人</option>
                     @endfor

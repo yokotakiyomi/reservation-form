@@ -15,3 +15,53 @@
     font-size: 24px;
 }
 
+.full-screen-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 1200;
+    padding: 40px 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.full-screen-menu.show {
+    display: flex;
+}
+
+.menu-close {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    color: white;
+    background: #2f62ff;
+    border: none;
+    border-radius: 6px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 1.5rem;
+}
+
+.menu-link {
+    color: #2f62ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-link:hover {
+    text-decoration: underline;
+}

@@ -14,11 +14,8 @@ class ShopController extends Controller
 {
     public function index(Request $request)
     {
-        // 全エリア・全ジャンルを取得
         $areas  = Area::all();
         $genres = Genre::all();
-
-        // クエリを受け取ってビルド
         $query = Shop::with(['area', 'genre']);
 
         if ($request->filled('area')) {
@@ -33,7 +30,6 @@ class ShopController extends Controller
 
         $shops = $query->get();
 
-        // お気に入り判定
         $favoriteIds = Auth::check()
             ? Auth::user()->favorites->pluck('shop_id')->toArray()
             : [];

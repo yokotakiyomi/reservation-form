@@ -13,8 +13,8 @@ class MypageController extends Controller
     {
         $user = Auth::user();
 
-        $reservations     = $user->reservations()->with('shop')->get();
-        $favoriteShops    = $user->favorites()
+        $reservations = $user->reservations()->with('shop')->get();
+        $favoriteShops = $user->favorites()
             ->with('shop.area', 'shop.genre')
             ->get()
             ->pluck('shop');
