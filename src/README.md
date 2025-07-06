@@ -4,7 +4,7 @@
 飲食店を検索・お気に入り登録、予約できる飲食店予約アプリ
 
 ## アプリケーションURL
-http://localhost/
+- http://localhost/
 - 予約・お気に入り登録は会員登録が必要です。
 - 会員登録： http://localhost/ragister
 - ログイン： http://localhost/login
