@@ -21,7 +21,14 @@ http://localhost/
 - マイページで予約状況・お気に入り店舗表示
 
 ## 使用技術
-Laravel８
+| 種類     | 技術                             |
+|----------|----------------------------------|
+| フレームワーク | Laravel 8                       |
+| 言語     | PHP / JavaScript / Blade          |
+| データベース | MySQL                           |
+| バージョン管理 | Git / GitHub                   |
+| 環境構築 | Laravel Sail（Docker）またはローカル |
+
 
 ## テーブル設計
 <img width="333" alt="テーブル" src="https://github.com/user-attachments/assets/4f35c7ca-2088-434f-b503-896063a1c92a" />
@@ -30,10 +37,48 @@ Laravel８
 <img width="747" alt="ER図" src="https://github.com/user-attachments/assets/c8067184-40d0-48f9-887f-bf120ecbd62f" />
 
 ## 環境構築
-- git clone https://github.com/yokotakiyomi/reservation-form.git
-- cd your-repo
-- composer install
-- cp .env.example .env
-- php artisan key:generate
-- php artisan migrate
-- php artisan serve
+*1.リポジトリをクローン*
+
+git clone https://github.com/yokotakiyomi/reservation-form.git
+
+cd reservation-form
+
+
+*2.依存パッケージのインストール*
+
+composer install
+
+
+*3..envファイルを作成*
+
+cp .env.example .env
+
+
+*4..envを編集し、データベース情報を入力*
+
+- DB_CONNECTION=mysql
+- DB_HOST=127.0.0.1
+- DB_PORT=3306
+- DB_DATABASE=your_database_name
+- DB_USERNAME=your_username
+- DB_PASSWORD=your_password
+
+
+*5.アプリケーションキーを生成*
+
+php artisan key:generate
+
+
+*6.データベースのマイグレーションを実行*
+
+php artisan migrate
+
+
+*7.開発サーバーを起動*
+
+php artisan serve
+
+*8.アプリケーションにアクセス*
+
+http://localhost:8000
+
