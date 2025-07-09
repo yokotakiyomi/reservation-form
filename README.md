@@ -39,22 +39,29 @@ http://localhost/
 ## 環境構築
 *1.リポジトリをクローン*
 
-git clone https://github.com/yokotakiyomi/reservation-form.git
+$ git clone https://github.com/yokotakiyomi/reservation-form.git
 
-cd reservation-form
-
-
-*2.依存パッケージのインストール*
-
-composer install
+$ cd reservation-form
 
 
-*3..envファイルを作成*
+*2.Dockerの設定*
 
-cp .env.example .env
+$ docker-compose up -d --build
 
 
-*4..envを編集し、データベース情報を入力*
+*3.Laravelのパッケージのインストール*
+
+$ docker-compose exec php bash
+
+$ composer install
+
+
+*４..envファイルの作成*
+
+$ cp .env.example .env
+
+
+*５..envを編集し、データベース情報を入力*
 
 - DB_CONNECTION=mysql
 - DB_HOST=127.0.0.1
@@ -64,21 +71,16 @@ cp .env.example .env
 - DB_PASSWORD=your_password
 
 
-*5.アプリケーションキーを生成*
+*６.アプリケーションキーを生成*
 
-php artisan key:generate
-
-
-*6.データベースのマイグレーションを実行*
-
-php artisan migrate
+$ php artisan key:generate
 
 
-*7.開発サーバーを起動*
+*７.データベースのマイグレーションを実行*
 
-php artisan serve
+$ php artisan migrate
+
 
 *8.アプリケーションにアクセス*
 
 http://localhost:8000
-
